@@ -1,0 +1,22 @@
+CHIP A6Q2201883432 {
+    IN a, b, c, d;
+    OUT f;
+    PARTS:
+NOT(a=na);
+    NOT(b=nb);
+    NOT(c=nc);
+    NOT(d=nd);
+
+AND(a=na, b=nb, c=nc, d=nd, out=t1);
+    AND(a=na, b=nb, c=c, d=nd, out=t2);
+    AND(a=na, b=b, c=nc, d=nd, out=t3);
+    AND(a=a, b=nb, c=nc, d=nd, out=t4);
+    AND(a=a, b=nb, c=nc, d=d, out=t5);
+    AND(a=a, b=b, c=c, d=nd, out=t6);
+
+OR(a=t1, b=t2, out=or1);
+    OR(a=or1, b=t3, out=or2);
+    OR(a=or2, b=t4, out=or3);
+    OR(a=or3, b=t5, out=or4);
+    OR(a=or4, b=t6, out=f);
+}
