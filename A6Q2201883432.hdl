@@ -4,10 +4,10 @@ CHIP A6Q2201883432 {
    
     PARTS:
 
-    Not(a=a, out=na);
-    Not(a=b, out=nb);
-    Not(a=c, out=nc);
-    Not(a=d, out=nd);
+    Not(in=a, out=na);
+    Not(in=b, out=nb);
+    Not(in=c, out=nc);
+    Not(in=d, out=nd);
 
     And(a=na, b=nb, c=nc, d=nd, out=t1);
     And(a=na, b=nb, c=c, d=nd, out=t2);
