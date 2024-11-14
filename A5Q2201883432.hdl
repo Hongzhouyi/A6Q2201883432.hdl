@@ -3,9 +3,6 @@ CHIP A5Q2201883432 {
     OUT O;
 
     PARTS:
-    Not(in=T, out=Tnot);
-    And(a=X, b=T, out=andA);
-    And(a=U, b=Tnot, out=andB);
-    Or(a=andA, b=andB, out=orOut);
-    Not(in=orOut, out=O);
+    And(a=X, b=T, out=w1);
+    Or(a=w1, b=U, out=O);
 }
