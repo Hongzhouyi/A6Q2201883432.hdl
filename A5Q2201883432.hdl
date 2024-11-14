@@ -5,7 +5,7 @@ CHIP A5Q2201883432 {
     PARTS:
     Not(in=T, out=T.not);
     And(a=X, b=T, out=andA);
-    And(a=U, b=T.not, out=andB);
+    And(a=U, b=T, out=andB);
     Or(a=andA, b=andB, out=orOut);
     Not(in=orOut, out=O);
 }
